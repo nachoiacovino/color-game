@@ -2,7 +2,6 @@
 const newGame = _ => {
     let randomNumber = _ => Math.floor(Math.random() * 256)
     let randomColor = _ => `rgb(${randomNumber()}, ${randomNumber()}, ${randomNumber()})`
-    let gameOver = false
 
     let guess = randomColor()
     document.querySelector(".guess").textContent = guess.toUpperCase()
@@ -23,8 +22,12 @@ const newGame = _ => {
         selectedSquare.style.background = guess
         document.querySelector(".header").style.background = guess
         infoBar.textContent = "You win!"
-        gameOver = true
-        console.log(2 + gameOver)
+        
+        document.querySelectorAll(".square").forEach(e => {
+            e.addEventListener("click", _ => {
+                infoBar.textContent = "You win!"
+            })
+        })
 })
 
     infoBar.textContent = ""
