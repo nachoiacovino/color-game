@@ -1,0 +1,14 @@
+body {
+    background: #232323;
+}
+
+[class^="square"] {
+    width: 15%;
+    height: 0;
+    padding-bottom: 15%;
+    display: inline-block;
+}
+
+.header {
+    background: rgb(5, 121, 216);
+}
